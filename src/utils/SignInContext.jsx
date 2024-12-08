@@ -1,4 +1,7 @@
 import { createContext, useContext, useEffect, useRef, useState } from "react";
+import { createUserWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
+import { auth } from "./firebase";
+import { useNavigate } from "react-router-dom";
 
 const emailContext = createContext();
 const passwordContext = createContext();
@@ -22,6 +25,7 @@ export const SignInContextProvider = ({ children }) => {
   const rememberMe = useRef(null);
   const [signInCode, setSignInCode] = useState(false);
   const [formMessage, setFormMessage] = useState("");
+  const navigate = useNavigate()
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -42,11 +46,29 @@ export const SignInContextProvider = ({ children }) => {
     }
 
     setFormMessage("");
+
+    
+
+    createUserWithEmailAndPassword(auth, emailValue, passwordValue)
+      .then((userCredential) => {
+        // Signed up
+        const user = userCredential.user;
+        console.log(user);
+        navigate('/browse')
+        // ...
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorMessage, ":", errorMessage);
+        // ..
+      });
+
   };
   const toggleSignInCode = (e) => {
     setSignInCode(!signInCode);
   };
-
+  
   return (
     <useHandleSubmit.Provider value={handleSubmit}>
       <useToggleSignInCode.Provider value={toggleSignInCode}>
@@ -55,7 +77,7 @@ export const SignInContextProvider = ({ children }) => {
             <emailContext.Provider value={email}>
               <signInCodeContext.Provider value={signInCode}>
                 <formMessageContext.Provider value={formMessage}>
-                {children}
+                  {children}
                 </formMessageContext.Provider>
               </signInCodeContext.Provider>
             </emailContext.Provider>

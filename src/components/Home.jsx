@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import Header from "./Header";
 import { vidUrl } from "../utils/urls";
 
 const Home = () => {
+
   return (
     <>
       <div className="w-full h-dvh relative">
@@ -50,7 +51,7 @@ const Home = () => {
           <p>Ready to watch? Enter your mail to restart or create your membership</p>
           <form action="" className="m-4 flex flex-row align-middle justify-center gap-2" >
             <input className=" bg-[rgb(32,27,29)] rounded-full p-4 w-1/2 backdrop-blur-md border border-slate-300" type="email" placeholder="Email address" autoComplete="email"/>
-            <button className="w-1/3 rounded-full bg-red-600 text-2xl font-medium text-slate-100">Get Started</button>
+            <button className="w-1/3 rounded-full bg-[#6C63FF] text-2xl font-medium text-slate-100">Get Started</button>
           </form>
         </div>
         </div>

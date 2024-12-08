@@ -60,10 +60,10 @@ const Signin = () => {
               // required
             />
           </div>}
-          <div className="w-full text-red-500 text-center -mt-2 mb-2"><p>{formMssg}</p></div>
+          <div className="w-full text-[#6C63FF] text-center -mt-2 mb-2"><p>{formMssg}</p></div>
           <button
             type="submit"
-            className="w-full bg-red-600 hover:bg-red-700 text-white py-2 px-4 rounded-sm font-medium transition"
+            className="w-full bg-[#6C63FF] hover:bg-opacity-90 text-white py-2 px-4 rounded-sm font-medium transition"
           >
             {signInCode? 'Send Sign-In code' :'Sign up'}
           </button>
@@ -72,11 +72,11 @@ const Signin = () => {
               <input
                 type="checkbox"
                 ref={rememberMe}
-                className="text-red-500 focus:ring-2 focus:ring-red-500 rounded"
+                className="text-[#6C63FF]focus:ring-2 focus:ring-red-500 rounded"
               />
               <span className="ml-2">Remember me</span>
             </label>
-            <a href="/forgot-password" className="text-red-500 hover:underline">
+            <a href="/forgot-password" className="text-[#6C63FF] hover:underline">
               {signInCode? 'Forgot email or Phone number?':'Forgot password?'}
             </a>
           </div>
@@ -91,7 +91,7 @@ const Signin = () => {
           </button>
           <p className="mt-6 text-center text-sm text-gray-400">
             New to Netflix?{" "}
-            <a href="/sign-up" className="text-red-500 hover:underline">
+            <a href="/sign-up" className="text-[#6C63FF] hover:underline">
               Sign up now.
             </a>
           </p>

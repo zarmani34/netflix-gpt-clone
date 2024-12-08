@@ -23,15 +23,10 @@ export const TopRatedContextProvider = ({ children }) => {
       const apiUrl = `https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKeys}&language=en-US&page=1`;
       try {
         const res = await fetch(apiUrl, options);
-        if (!res.ok){
-          console.log('api fetch error')
-        }
         const data = await res.json();
         seTopRatedMovies(data);
-        console.log(data);
-        console.log(topRatedMovies);
       } catch (error) {
-        console.log("Error fetching data:", error);
+        throw new error(error);
       }
     };
     trending();

@@ -11,7 +11,7 @@ const Join = () => {
         </p>
         <div className="w-16 h-16 ">
           <svg
-            fill="#dc2626"
+            fill="#6C63FF"
             viewBox="0 0 512 512"
             version="1.1"
             xmlSpace="preserve"
@@ -40,7 +40,7 @@ const Join = () => {
         </p>
         <div className="w-16 h-16 ">
           <svg
-            fill="#dc2626"
+            fill="#6C63FF"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 52 52"
             enableBackground="new 0 0 52 52"
@@ -66,7 +66,7 @@ const Join = () => {
         </p>
         <div className="w-16 h-16 ">
           <svg
-            fill="#dc2626"
+            fill="#6C63FF"
             viewBox="0 0 50 50"
             version="1.2"
             baseProfile="tiny"
@@ -91,7 +91,7 @@ const Join = () => {
         </p>
         <div className="w-16 h-16 ">
           <svg
-            fill="#dc2626"
+            fill="#6C63FF"
             viewBox="0 0 50 50"
             version="1.2"
             baseProfile="tiny"

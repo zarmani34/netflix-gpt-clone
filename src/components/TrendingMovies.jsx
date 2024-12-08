@@ -34,7 +34,6 @@ const TrendingMovies = () => {
         trendingMovies?.results?.map((result) => (
           <Card key={result.id} result={result} />
         ))}
-        {console.log(trendingMovies)}
       </div>
     </>
   );

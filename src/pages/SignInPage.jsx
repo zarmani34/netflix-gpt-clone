@@ -1,8 +1,8 @@
 import { bgUrl } from "@/utils/urls";
-import Header from "./Header";
 import { useEffect, useState } from "react";
-import Signin from "./Signin";
 import { SignInContextProvider } from "@/utils/SignInContext";
+import Header from "@/components/Header";
+import Signin from "@/components/SignIn";
 
 const SignInPage = () => {
   const [signIn, setSignIn] = useState(false);

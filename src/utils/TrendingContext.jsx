@@ -25,8 +25,6 @@ export const TrendingContextProvider = ({ children }) => {
         const res = await fetch(apiUrl, options);
         const data = await res.json();
         setTrendingMovies(data);
-        console.log(data);
-        console.log(trendingMovies);
       } catch (error) {
         console.log("Error fetching data:", error);
       }
