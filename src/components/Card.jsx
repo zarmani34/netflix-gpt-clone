@@ -1,11 +1,37 @@
-import React from 'react'
+import { posterPathUrl } from "@/utils/urls";
+import React, { useState } from "react";
+import { createPortal } from "react-dom";
+import MovieDetails from "./MovieDeatils";
 
-const Card = ({result}) => {
+const Card = ({ result }) => {
+  const [showDetails, setShowDetails] = useState(false);
+
+  const handleCardClick = () => {
+    setShowDetails(true);
+  };
+
   return (
-    <div className='w-36 h-48 border-gray-500  m-2 rounded-3xl hover:scale-[1.1] hover:cursor-pointer flex-shrink-0 flex-grow transition-transform duration-500 ease-in-out'>
-      <img className='w-full h-full rounded-3xl' src={`https://image.tmdb.org/t/p/w500${result.poster_path}`} alt="" />
-    </div>
-  )
-}
+    <>
+      <div 
+        onClick={handleCardClick}
+        className="w-36 h-48 sm:w-48 sm:h-52 lg:w-52 lg:h-64 m-auto border border-indigo-500 rounded-3xl flex-shrink-0 hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer"
+      >
+        <img 
+          className="w-full h-full rounded-3xl" 
+          src={posterPathUrl(result.poster_path)} 
+          alt="poster picture" 
+        />
+      </div>
+      
+      {showDetails && createPortal(
+        <MovieDetails 
+          movie={result} 
+          onClose={() => setShowDetails(false)} 
+        />,
+        document.body
+      )}
+    </>
+  );
+};
 
-export default Card
+export default Card;

@@ -3,7 +3,7 @@ import Tittle from "./Tittle";
 
 const Join = () => {
   return (
-    <div className="bg-black p-8">
+    <div className="bg-black sm:p-8 p-2">
       <Tittle>More Reasons To Join</Tittle>
       <div className="w-full h-24 px-4 py-8 mb-2 flex flex-row items-center justify-between rounded-xl border-2 border-[#303030] bg-[#272727]">
         <p className="text-slate-200 text-lg font-normal ">
@@ -11,7 +11,7 @@ const Join = () => {
         </p>
         <div className="w-16 h-16 ">
           <svg
-            fill="#dc2626"
+            fill="#6C63FF"
             viewBox="0 0 512 512"
             version="1.1"
             xmlSpace="preserve"
@@ -40,7 +40,7 @@ const Join = () => {
         </p>
         <div className="w-16 h-16 ">
           <svg
-            fill="#dc2626"
+            fill="#6C63FF"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 52 52"
             enableBackground="new 0 0 52 52"
@@ -66,7 +66,7 @@ const Join = () => {
         </p>
         <div className="w-16 h-16 ">
           <svg
-            fill="#dc2626"
+            fill="#6C63FF"
             viewBox="0 0 50 50"
             version="1.2"
             baseProfile="tiny"
@@ -91,7 +91,7 @@ const Join = () => {
         </p>
         <div className="w-16 h-16 ">
           <svg
-            fill="#dc2626"
+            fill="#6C63FF"
             viewBox="0 0 50 50"
             version="1.2"
             baseProfile="tiny"

@@ -24,7 +24,7 @@ const TopRatedMovies = () => {
     <Tittle>
       Top rated Movies
     </Tittle>
-      <div className="mb-4 flex flex-row align-middle justify-middle flex-nowrap overflow-x-scroll overflow-y-hidden scrollbar-hide">
+      <div className="space-x-4 mb-4 flex flex-row align-middle justify-middle flex-nowrap overflow-y-visible overflow-x-scroll  scrollbar-hide py-4">
         {isLoading
           ? loadShimmer.map((_, index) => <ShimmerUI key={index} />)
           : topRatedMovies?.results?.map((result) => (

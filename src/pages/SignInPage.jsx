@@ -1,13 +1,22 @@
 import { bgUrl } from "@/utils/urls";
-import Header from "./Header";
 import { useEffect, useState } from "react";
-import Signin from "./Signin";
 import { SignInContextProvider } from "@/utils/SignInContext";
+import Header from "@/components/Header";
+import Signin from "@/components/SignIn";
+import { useLocation } from "react-router-dom";
 
 const SignInPage = () => {
-  const [signIn, setSignIn] = useState(false);
+  const getStartedDetails = useLocation()
+  const [getStartedMail, setGetStartedMail] = useState('')
+  const [isSignedUp, setIsSignedUp] = useState(true)
+  
+
   useEffect(() => {
-    setSignIn(true);
+    if (getStartedDetails.state){
+      const {email, isSignedUp} = getStartedDetails.state
+      setGetStartedMail(email)
+      setIsSignedUp(isSignedUp)
+    }
   });
 
   return (
@@ -19,9 +28,9 @@ const SignInPage = () => {
         backgroundRepeat: "no-repeat",
       }}
     >
-      <Header signIn={signIn} />
+      <Header  />
       <SignInContextProvider>
-        <Signin />
+        <Signin getStartedMail={getStartedMail} isSignedUp={isSignedUp} setIsSignedUp={setIsSignedUp} />
       </SignInContextProvider>
       <div className="w-full h-full absolute top-0 left-0 bg-gray-900 bg-opacity-50"></div>
     </div>

@@ -25,7 +25,7 @@ const TrendingMovies = () => {
     <Tittle>
       Trending
     </Tittle>
-      <div className=" mb-4 flex flex-row align-middle justify-middle flex-nowrap overflow-x-scroll overflow-y-hidden scrollbar-hide">
+      <div className="space-x-4 mb-4 flex flex-row align-middle justify-middle flex-nowrap overflow-x-scroll overflow-y-hidden scrollbar-hide py-4">
         {isLoading
           ? loadShimmer.map((_, index) => (
                 <ShimmerUI key={index} />
@@ -34,7 +34,6 @@ const TrendingMovies = () => {
         trendingMovies?.results?.map((result) => (
           <Card key={result.id} result={result} />
         ))}
-        {console.log(trendingMovies)}
       </div>
     </>
   );
