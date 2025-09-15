@@ -7,6 +7,8 @@ export const netflixLogo =
 export const bgUrl =
   "https://assets.nflxext.com/ffe/siteui/vlv3/4690cab8-243a-4552-baef-1fb415632f74/web/NG-en-20241118-TRIFECTA-perspective_41d3d613-b450-45e3-8ab3-ba814d988ae5_large.jpg";
 
+export const apiKeys = process.env.REACT_APP_TMDB_API_KEY;
+export const AI_KEY = process.env.REACT_APP_GOOGLE_API_KEY;
 
 export const trailerApiUrl = (trailerId, apiKeys) =>
   `https://api.themoviedb.org/3/movie/${trailerId}/videos?api_key=${apiKeys}&language=en-US`;
@@ -26,6 +28,7 @@ export const posterPathUrl = (poster_path) =>
 export const genreApiUrl = (apiKeys) =>
   `https://api.themoviedb.org/3/genre/movie/list?api_key=${apiKeys}&language=en-US`;
 
+// 
 
 export const gptQuery = (
   userQuery
